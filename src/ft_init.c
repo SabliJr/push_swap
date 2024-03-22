@@ -6,11 +6,11 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:13:59 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/21 01:19:19 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/21 15:02:10 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "./push_swap.h"
 
 t_list	*ft_init(char **args, int argc)
 {
@@ -27,8 +27,9 @@ t_list	*ft_init(char **args, int argc)
 	while (args[i])
 	{
 		nbr = ft_atoi(args[i]);
-		if (nbr > INT_MAX || nbr < INT_MIN || (!ft_check_int(res, nbr,
-					args[i])))
+		printf("The number that's coming from atoi: %ld\n", nbr);
+		if (nbr > INT_MAX || nbr < INT_MIN || (ft_check_int(res, nbr,
+					args[i])) == 0)
 		{
 			ft_putstr_fd("Error\n", 2);
 			return (NULL);
@@ -44,20 +45,21 @@ t_list	*ft_init(char **args, int argc)
 int	ft_check_int(t_list *lst, int num, char *nbrs)
 {
 	t_list	*temp;
-	int		i;
+	int		k;
 
 	temp = lst;
-	i = 0;
-	while (nbrs[i])
+	k = 0;
+	while (nbrs[k])
 	{
-		if (!((nbrs[i] == '-' || nbrs[i] == '+') && ft_isdigit(nbrs[i + 1])
-				&& (i == 0 || !ft_isdigit(nbrs[i - 1]))) || ft_isdigit(nbrs[i]))
+		if ((nbrs[k] == '-' || nbrs[k] == '+') && (nbrs[k + 1] == '-' || nbrs[k
+				+ 1] == '+'))
 			return (0);
-		i++;
+		else if (!ft_isdigit(nbrs[k]) && nbrs[k] != '-' && nbrs[k] != '+')
+			return (0);
+		k++;
 	}
 	while (temp)
 	{
-        printf("%ld\n", temp->content);
 		if (temp->content == num)
 			return (0);
 		temp = temp->next;

@@ -6,14 +6,14 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:13:20 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/21 01:24:43 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/21 19:36:24 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./libft/libft.h"
+# include "../libft/libft.h"
 # include <limits.h>
 # include <stdbool.h>
 # include <stdio.h>
@@ -45,5 +45,17 @@ int			check_sorting_a(t_list *lst, int count);
 t_list		*find_min_lst(t_list **lst);
 t_list		*find_max_lst(t_list **lst);
 int			is_rev_sorted(t_stacks *tab);
+
+void		ra(t_list **stack1);
+void		pa(t_list **stack1, t_list **stack2);
+void		pa(t_list **stack1, t_list **stack2);
+void		rb(t_list **stack2);
+void		rr(t_list **lst1, t_list **lst2);
+void		ss(t_list **stack1, t_list *stack2);
+void		sa(t_list **stack1);
+void		sb(t_list **stack2);
+static void	ft_rr(t_list **lst);
+void		rra(t_list **lst1);
+void		rrb(t_list **lst2);
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:05:38 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/21 01:20:27 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/21 12:34:10 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "./push_swap.h"
 
 void	add_index(t_list *lst)
 {
