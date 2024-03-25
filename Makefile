@@ -8,10 +8,16 @@ WHITE:="\033[1;37m"
 EOC:="\033[0;0m"
 
 LIBFT_PATH = ./libft
-PUSH_SWAP = push_swap.c \
+PUSH_SWAP = ./src/push_swap.c \
 			./src/ft_init.c \
 			./src/indexing.c \
-			./src/sort_utils.c
+			./src/sort_utils.c \
+			./src/handle_sort.c \
+			./src/ope1.c \
+			./src/ope2.c \
+			./src/ope3.c \
+			./src/ope4.c \
+			./src/quick_sort.c
 
 SRCS = ${PUSH_SWAP}
 OBJS = ${SRCS:.c=.o}

@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:12:42 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/21 15:02:24 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/24 17:31:59 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,19 @@
 // int	main(int argc, char *argv[])
 int	main(void)
 {
-	int			argc;
-	char		*argv[3];
 	t_stacks	*tab;
 	char		**args;
+
+	int			argc;
+	char		*argv[3];
 	char		*s;
 	char		*num;
-
 	argc = 2;
 	s = "Some BS";
-	num = "3 -3";
+	num = " 6 3 -3 5";
 	argv[0] = s;
 	argv[1] = num;
+	
 	args = NULL;
 	if (argc < 2)
 		return (1);
@@ -43,7 +44,9 @@ int	main(void)
 	tab->stack_b = NULL;
 	tab->a_size = ft_lstsize(tab->stack_a);
 	tab->b_size = ft_lstsize(tab->stack_b);
-	printf("%d\n", tab->a_size);
+	// printf("%d\n", tab->a_size);
 	printf("This is the push swap project");
-	return (0);
+	add_index(tab->stack_a);
+	check_sort(tab);
+	// return (0);
 }

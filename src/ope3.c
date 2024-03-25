@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:23:01 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/21 16:31:04 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/24 16:03:32 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	sb(t_list **stack2)
 	write(1, "sb\n", 3);
 }
 
-void	ss(t_list **stack1, t_list *stack2)
+void	ss(t_list **stack1, t_list **stack2)
 {
 	ft_s(stack1);
 	ft_s(stack2);

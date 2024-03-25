@@ -6,17 +6,17 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:21:20 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/21 15:02:28 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/22 12:30:03 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-int	check_sorting(t_list *lst)
+int	check_sorting(t_list **lst)
 {
 	t_list	*temp;
 
-	temp = lst;
+	temp = *lst;
 	while (temp)
 	{
 		if (temp->content > temp->next->content)
@@ -33,7 +33,7 @@ int	check_sorting_a(t_list *lst, int count)
 	len = ft_lstsize(lst);
 	if (len != count)
 		return (0);
-	if (check_sorting(lst) == 0)
+	if (check_sorting(&lst) == 0)
 		return (0);
 	return (1);
 }
