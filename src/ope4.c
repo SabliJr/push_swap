@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:35:23 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/21 19:34:05 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/24 16:05:55 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	ft_rr(t_list **lst)
 
 void	rra(t_list **lst1)
 {
-	ft_rr(*lst1);
+	ft_rr(lst1);
 	write(1, "rra\n", 4);
 }
 
