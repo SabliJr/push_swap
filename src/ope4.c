@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:35:23 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/24 16:05:55 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/25 20:30:19 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,13 @@ void	rrb(t_list **lst2)
 {
 	ft_rr(lst2);
 	write(1, "rrb\n", 4);
+}
+
+void	print_lst(t_list *lst)
+{
+	while (lst)
+	{
+		printf("%ld\n", lst->content);
+		lst = lst->next;
+	}
 }

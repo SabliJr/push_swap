@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:13:20 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/24 16:56:32 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/26 01:15:41 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,8 @@ void		start_sorting(t_list **stack1, t_list **stack2, t_swap *swaps,
 				int count);
 void		find_next(t_list **stack1, t_list **stack2, t_swap *swaps);
 void		quick_a(t_list **stack1, t_list **stack2, t_swap *swaps);
-void		quick_b(t_list **stack1, t_list **stack2, t_swap *swaps);
+void		quick_b(t_list **stack1, t_list **stack2, t_swap *push);
 void		quick_sort(t_list **stack1, t_list **stack2, int count);
+void		print_lst(t_list *lst);
 
 #endif
