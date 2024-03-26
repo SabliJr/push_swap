@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 19:39:01 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/22 12:09:10 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/26 01:16:58 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	check_sort(t_stacks *stacks)
 	int	len;
 
 	len = ft_lstsize(stacks->stack_a);
+	printf("The len of len in check sort is: %d\n", len);
 	if (check_sorting(&stacks->stack_a))
 		return ;
 	if (len == 2)
@@ -41,13 +42,13 @@ void	sort_5nbr(t_stacks *tab)
 	while (len--)
 	{
 		if (tab->stack_a->index == 0 || tab->stack_a->index == 1)
-			pa(&tab->stack_a, &tab->stack_a);
+			pb(&tab->stack_a, &tab->stack_b); // push to stack_b instead
 		else
 			ra(&tab->stack_a);
 	}
 	sort_3nbr(tab);
-	pa(&tab->stack_a, &tab->stack_b);
-	pa(&tab->stack_a, &tab->stack_b);
+	pa(&tab->stack_a, &tab->stack_b); // push back to stack_a
+	pa(&tab->stack_a, &tab->stack_b); // push back to stack_a
 	if (tab->stack_a->content > tab->stack_a->next->content)
 		sa(&tab->stack_a);
 }

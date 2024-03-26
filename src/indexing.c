@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:05:38 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/21 12:34:10 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/25 12:00:53 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	add_index(t_list *lst)
 		replace_index(lst, min, i);
 		i++;
 	}
+	// printf("The min in indexing function is %d\n", min);
 }
 
 int	min_nbr(t_list *lst)
@@ -34,6 +35,7 @@ int	min_nbr(t_list *lst)
 	long int	min;
 
 	min = LONG_MAX;
+	// printf("The min from log max is: %ld\n", min);
 	temp = lst;
 	while (temp)
 	{
@@ -41,6 +43,7 @@ int	min_nbr(t_list *lst)
 			min = temp->content;
 		temp = temp->next;
 	}
+	// printf("The min_nbr in indexing function is %ld\n", min);
 	return (min);
 }
 

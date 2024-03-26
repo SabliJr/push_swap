@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:13:59 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/21 15:02:10 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/25 11:31:27 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ t_list	*ft_init(char **args, int argc)
 	while (args[i])
 	{
 		nbr = ft_atoi(args[i]);
-		printf("The number that's coming from atoi: %ld\n", nbr);
 		if (nbr > INT_MAX || nbr < INT_MIN || (ft_check_int(res, nbr,
 					args[i])) == 0)
 		{
