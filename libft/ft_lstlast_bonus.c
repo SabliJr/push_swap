@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:10:34 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/25 21:27:07 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/26 18:59:13 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	// t_list	*_list;
 	if (lst == NULL)
 		return (lst);
-	// list = lst;
-	while (lst->next != 0)
+	while (lst->next)
 		lst = lst->next;
 	return (lst);
 }

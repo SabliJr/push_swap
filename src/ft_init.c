@@ -6,13 +6,29 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:13:59 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/25 11:31:27 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/27 15:57:47 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-t_list	*ft_init(char **args, int argc)
+void	_free(char **args, int is_allocated)
+{
+	int	k;
+
+	k = 0;
+	if (is_allocated)
+	{
+		while (args[k])
+		{
+			free(args[k]);
+			k++;
+		}
+		free(args);
+	}
+}
+
+t_list	*ft_init(char **args, int argc, int is_allocated)
 {
 	t_list	*temp;
 	t_list	*res;
@@ -24,13 +40,14 @@ t_list	*ft_init(char **args, int argc)
 	else
 		i = 1;
 	res = NULL;
-	while (args[i])
+	while (args[i] && (i < argc || argc == 2))
 	{
 		nbr = ft_atoi(args[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN || (ft_check_int(res, nbr,
 					args[i])) == 0)
 		{
 			ft_putstr_fd("Error\n", 2);
+			_free(args, is_allocated);
 			return (NULL);
 		}
 		temp = ft_lstnew(nbr);
@@ -38,6 +55,8 @@ t_list	*ft_init(char **args, int argc)
 		temp->index = -1;
 		i++;
 	}
+	if (is_allocated)
+		_free(args, is_allocated);
 	return (res);
 }
 
