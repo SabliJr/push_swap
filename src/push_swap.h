@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 19:13:20 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/26 01:15:41 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/27 15:52:02 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_stacks
 	int		b_size;
 }			t_stacks;
 
-t_list		*ft_init(char **args, int argc);
+t_list		*ft_init(char **args, int argc, int is_allocated);
 int			ft_check_int(t_list *res, int num, char *nbr);
 void		replace_index(t_list *lst, int i, int x);
 int			min_nbr(t_list *lst);
@@ -54,7 +54,6 @@ void		rr(t_list **lst1, t_list **lst2);
 void		ss(t_list **stack1, t_list **stack2);
 void		sa(t_list **stack1);
 void		sb(t_list **stack2);
-// static void	ft_rr(t_list **lst);
 void		rra(t_list **lst1);
 void		rrb(t_list **lst2);
 void		sort_5nbr(t_stacks *tab);
@@ -67,6 +66,6 @@ void		find_next(t_list **stack1, t_list **stack2, t_swap *swaps);
 void		quick_a(t_list **stack1, t_list **stack2, t_swap *swaps);
 void		quick_b(t_list **stack1, t_list **stack2, t_swap *push);
 void		quick_sort(t_list **stack1, t_list **stack2, int count);
-void		print_lst(t_list *lst);
+// void		print_lst(t_list *lst);
 
 #endif

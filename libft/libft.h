@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 11:07:29 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/21 02:37:07 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/26 15:08:12 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,6 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 void				ft_lstadd_front(t_list **lst, t_list *new);
 t_list				*ft_lstlast(t_list *lst);
 t_list				*ft_lstnew(int content);
-int					ft_lstsize(t_list *lst);
+long int			ft_lstsize(t_list *lst);
 
 #endif

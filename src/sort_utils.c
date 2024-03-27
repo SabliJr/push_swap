@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:21:20 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/25 21:28:57 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/26 19:02:11 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ t_list	*find_min_lst(t_list **lst)
 			min = temp;
 		temp = temp->next;
 	}
-	// print_lst(min);
 	return (min);
 }
 
@@ -68,7 +67,6 @@ t_list	*find_max_lst(t_list **lst)
 			max = temp;
 		temp = temp->next;
 	}
-	// print_lst(max);
 	return (max);
 }
 
