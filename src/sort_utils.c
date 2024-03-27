@@ -26,14 +26,14 @@ int	check_sorting(t_list **lst)
 	return (1);
 }
 
-int	check_sorting_a(t_list *lst, int count)
+int check_sorting_a(t_list **lst, int count)
 {
 	int	len;
 
-	len = ft_lstsize(lst);
+	len = ft_lstsize(*lst);
 	if (len != count)
 		return (0);
-	if (check_sorting(&lst) == 0)
+	if (check_sorting(lst) == 0)
 		return (0);
 	return (1);
 }
