@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 19:39:01 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/26 19:02:40 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/28 10:12:04 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	sort_5nbr(t_stacks *tab)
 
 void	sort_3nbr(t_stacks *stacks)
 {
-	t_list *last;
+	t_list	*last;
 
 	if (check_sorting(&stacks->stack_a))
 		return ;

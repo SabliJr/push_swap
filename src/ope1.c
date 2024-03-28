@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:03:31 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/26 17:45:13 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/28 10:12:40 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	pb(t_list **stack1, t_list **stack2)
 
 void	pa(t_list **stack1, t_list **stack2)
 {
-	t_list *push_b;
+	t_list	*push_b;
 
 	if (!*stack2)
 		return ;

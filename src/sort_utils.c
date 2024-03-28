@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:21:20 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/26 19:02:11 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/28 10:13:50 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	check_sorting(t_list **lst)
 	return (1);
 }
 
-int check_sorting_a(t_list **lst, int count)
+int	check_sorting_a(t_list **lst, int count)
 {
 	int	len;
 
@@ -72,7 +72,7 @@ t_list	*find_max_lst(t_list **lst)
 
 int	is_rev_sorted(t_stacks *tab)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = tab->stack_a;
 	while (temp->next)
