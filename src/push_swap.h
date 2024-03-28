@@ -41,7 +41,7 @@ void		replace_index(t_list *lst, int i, int x);
 int			min_nbr(t_list *lst);
 void		add_index(t_list *lst);
 int			check_sorting(t_list **lst);
-int			check_sorting_a(t_list *lst, int count);
+int check_sorting_a(t_list **lst, int count);
 t_list		*find_min_lst(t_list **lst);
 t_list		*find_max_lst(t_list **lst);
 int			is_rev_sorted(t_stacks *tab);
