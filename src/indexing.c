@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:05:38 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/26 19:01:30 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/28 08:58:38 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	min_nbr(t_list *lst)
 
 void	replace_index(t_list *lst, int i, int x)
 {
-	t_list *temp;
+	t_list	*temp;
 
 	temp = lst;
 	while (temp)
@@ -56,4 +56,11 @@ void	replace_index(t_list *lst, int i, int x)
 		temp = temp->next;
 	}
 	temp->index = x;
+}
+
+void	int_tswaps(t_swap *lst)
+{
+	lst->flag = 0;
+	lst->max = 0;
+	lst->mid = 0;
 }

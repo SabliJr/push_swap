@@ -6,7 +6,7 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 20:13:59 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/27 15:57:47 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/28 10:11:21 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	_free(char **args, int is_allocated)
 		}
 		free(args);
 	}
+	printf("This is the k value: %d\n", k);
 }
 
 t_list	*ft_init(char **args, int argc, int is_allocated)
@@ -35,11 +36,12 @@ t_list	*ft_init(char **args, int argc, int is_allocated)
 	int		i;
 	long	nbr;
 
+	res = NULL;
+	temp = NULL;
 	if (argc == 2)
 		i = 0;
 	else
 		i = 1;
-	res = NULL;
 	while (args[i] && (i < argc || argc == 2))
 	{
 		nbr = ft_atoi(args[i]);
@@ -47,7 +49,9 @@ t_list	*ft_init(char **args, int argc, int is_allocated)
 					args[i])) == 0)
 		{
 			ft_putstr_fd("Error\n", 2);
-			_free(args, is_allocated);
+			free_list(res);
+			if (is_allocated)
+				_free(args, is_allocated);
 			return (NULL);
 		}
 		temp = ft_lstnew(nbr);
@@ -70,7 +74,7 @@ int	ft_check_int(t_list *lst, int num, char *nbrs)
 	while (nbrs[k])
 	{
 		if ((nbrs[k] == '-' || nbrs[k] == '+') && (nbrs[k + 1] == '-' || nbrs[k
-				+ 1] == '+'))
+					+ 1] == '+'))
 			return (0);
 		else if (!ft_isdigit(nbrs[k]) && nbrs[k] != '-' && nbrs[k] != '+')
 			return (0);

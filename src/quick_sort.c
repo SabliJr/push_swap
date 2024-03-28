@@ -6,16 +6,17 @@
 /*   By: sabakar- <sabakar-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 12:10:37 by sabakar-          #+#    #+#             */
-/*   Updated: 2024/03/27 15:05:38 by sabakar-         ###   ########.fr       */
+/*   Updated: 2024/03/28 08:58:49 by sabakar-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./push_swap.h"
 
-void quick_sort(t_list **stack1, t_list **stack2, int count)
+void	quick_sort(t_list **stack1, t_list **stack2, int count)
 {
-	t_swap swaps;
+	t_swap	swaps;
 
+	int_tswaps(&swaps);
 	swaps.next = find_min_lst(stack1)->index;
 	swaps.max = find_max_lst(stack1)->index;
 	swaps.mid = swaps.max / 2 + swaps.next;
@@ -30,28 +31,10 @@ void quick_sort(t_list **stack1, t_list **stack2, int count)
 	}
 }
 
-// void	quick_sort(t_list **stack1, t_list **stack2, int count)
-// {
-// 	t_swap	swaps;
-
-// 	swaps.next = find_min_lst(stack1)->index;
-// 	swaps.max = find_max_lst(stack1)->index;
-// 	swaps.mid = swaps.max / 2 + swaps.next;
-// 	swaps.flag = 0;
-// 	start_sorting(stack1, stack2, &swaps, count);
-// 	while (!(check_sorting_a(*stack1, count)))
-// 	{
-// 		if (ft_lstsize(*stack2) == 0)
-// 			quick_b(stack1, stack2, &swaps);
-// 		else
-// 			quick_a(stack1, stack2, &swaps);
-// 	}
-// }
-
-void start_sorting(t_list **stack1, t_list **stack2, t_swap *swaps,
-									 int count)
+void	start_sorting(t_list **stack1, t_list **stack2, t_swap *swaps,
+		int count)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (++i < count)
@@ -71,7 +54,7 @@ void start_sorting(t_list **stack1, t_list **stack2, t_swap *swaps,
 	swaps->flag++;
 }
 
-void find_next(t_list **stack1, t_list **stack2, t_swap *swaps)
+void	find_next(t_list **stack1, t_list **stack2, t_swap *swaps)
 {
 	if (ft_lstsize(*stack2) > 0 && ((*stack2)->index == swaps->next))
 		pa(stack1, stack2);
@@ -81,21 +64,24 @@ void find_next(t_list **stack1, t_list **stack2, t_swap *swaps)
 		ra(stack1);
 		swaps->next++;
 	}
-	else if ((ft_lstsize(*stack2)) > 2 && ft_lstlast(*stack2)->index == swaps->next)
+	else if ((ft_lstsize(*stack2)) > 2
+		&& ft_lstlast(*stack2)->index == swaps->next)
 		rrb(stack2);
 	else if ((*stack1)->next->index == swaps->next)
 		sa(stack1);
-	else if ((ft_lstsize(*stack1)) > 1 && ((*stack1)->next->index == swaps->next) && ((*stack2)->next->index == swaps->next + 1))
+	else if ((ft_lstsize(*stack1)) > 1
+		&& ((*stack1)->next->index == swaps->next)
+		&& ((*stack2)->next->index == swaps->next + 1))
 		ss(stack1, stack2);
 	else
-		return;
+		return ;
 	find_next(stack1, stack2, swaps);
 }
 
-void quick_a(t_list **stack1, t_list **stack2, t_swap *swaps)
+void	quick_a(t_list **stack1, t_list **stack2, t_swap *swaps)
 {
-	int count_b;
-	int i;
+	int	count_b;
+	int	i;
 
 	i = -1;
 	count_b = ft_lstsize(*stack2);
@@ -116,10 +102,11 @@ void quick_a(t_list **stack1, t_list **stack2, t_swap *swaps)
 	swaps->flag++;
 }
 
-void quick_b(t_list **stack1, t_list **stack2, t_swap *swaps)
+void	quick_b(t_list **stack1, t_list **stack2, t_swap *swaps)
 {
-	int now_flag;
+	int	now_flag;
 
+	(*stack1)->flag = 0;
 	now_flag = (*stack1)->flag;
 	if ((*stack1)->flag != 0)
 	{
